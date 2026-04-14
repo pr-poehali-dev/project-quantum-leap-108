@@ -3,25 +3,28 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const testimonials = [
   {
-    name: "Елена Родригес",
-    role: "Директор по нейронауке, Quantum Dynamics",
+    name: "Алина, 26 лет",
+    role: "Переехала из Казани в Москву",
     avatar: "/professional-woman-scientist.png",
+    rating: "⭐⭐⭐⭐⭐",
     content:
-      "SynapseAI изменил наш подход к нейрореабилитации. Результаты пациентов улучшились на 340% после внедрения.",
+      "Первый месяц в Москве был ужасным — никого не знала. Скачала MeetUp, нашла пробежку в парке и познакомилась с пятью людьми за один вечер. Теперь мы бегаем каждые выходные!",
   },
   {
-    name: "Маркус Уильямс",
-    role: "Руководитель исследований, Stellar Analytics",
+    name: "Дмитрий, 31 год",
+    role: "Интроверт, Екатеринбург",
     avatar: "/cybersecurity-expert-man.jpg",
+    rating: "⭐⭐⭐⭐⭐",
     content:
-      "Точность и протоколы безопасности не имеют аналогов. Мы значительно ускорили клинические испытания с платформой SynapseAI.",
+      "Я всегда боялся знакомиться первым. Но когда идёшь на конкретное мероприятие — не нужно придумывать тему для разговора. Общий интерес уже есть. Нашёл отличных друзей на туристическом походе.",
   },
   {
-    name: "Анна Ковальски",
-    role: "Вице-президент по разработке, Nova Industries",
+    name: "Катя, 23 года",
+    role: "Организатор вечеринок, Краснодар",
     avatar: "/asian-woman-tech-developer.jpg",
+    rating: "⭐⭐⭐⭐⭐",
     content:
-      "Интеграция прошла безупречно. Адаптивные алгоритмы понимают намерения пользователя лучше любой системы, что мы тестировали.",
+      "У меня 4.9 звезды на вечеринках! Люди видят рейтинг и сразу решаются прийти. Провела уже 12 событий через MeetUp — каждый раз новые лица и классная атмосфера.",
   },
 ]
 
@@ -30,9 +33,9 @@ export function TestimonialsSection() {
     <section className="py-24 px-6 bg-card">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Нам доверяют лидеры</h2>
+          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Истории пользователей</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Что говорят лидеры индустрии о нашей революционной технологии
+            Реальные люди, которые нашли компанию и перестали скучать в одиночку
           </p>
         </div>
 
@@ -40,15 +43,15 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="glow-border slide-up" style={{ animationDelay: `${index * 0.15}s` }}>
               <CardContent className="p-6">
+                <p className="text-lg mb-2">{testimonial.rating}</p>
                 <p className="text-card-foreground mb-6 leading-relaxed italic">"{testimonial.content}"</p>
                 <div className="flex items-center gap-4">
                   <Avatar>
                     <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
                     <AvatarFallback>
                       {testimonial.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
+                        .split(" ")[0]
+                        .slice(0, 2)}
                     </AvatarFallback>
                   </Avatar>
                   <div>

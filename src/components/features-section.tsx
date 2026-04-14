@@ -3,51 +3,51 @@ import { Badge } from "@/components/ui/badge"
 
 const features = [
   {
-    title: "Адаптивная нейрообработка",
-    description: "Самооптимизирующиеся алгоритмы, которые обучаются на нейронных паттернах и улучшают интерпретацию сигналов.",
-    icon: "brain",
-    badge: "ИИ",
+    title: "Анкета и профиль",
+    description: "Заполни анкету: пол, возраст, хобби, цели и социальный статус. Находи людей с похожими интересами мгновенно.",
+    icon: "person",
+    badge: "Профиль",
   },
   {
-    title: "Медицинская защита",
-    description: "Шифрование по стандартам FDA со сквозной защитой конфиденциальных нейронных данных.",
-    icon: "lock",
-    badge: "Сертификат",
+    title: "События в твоём городе",
+    description: "Вечеринки, свидания, тренировки, кино, театр, туризм и прогулки — выбирай что по душе прямо сейчас.",
+    icon: "map",
+    badge: "Города",
   },
   {
-    title: "Интуитивное управление",
-    description: "Естественная трансляция мыслей в действия с откликом менее миллисекунды и точностью 99,7%.",
-    icon: "globe",
-    badge: "Точность",
-  },
-  {
-    title: "Предиктивная калибровка",
-    description: "ML-модели, которые предугадывают намерения пользователя и оптимизируют нейронные пути.",
+    title: "Присоединяйся в один клик",
+    description: "Увидел интересное событие — нажал «Хочу пойти» и уже в компании. Никаких сложных шагов.",
     icon: "zap",
-    badge: "Умный",
+    badge: "Просто",
   },
   {
-    title: "Биометрическая интеграция",
-    description: "Бесшовная синхронизация с мониторингом жизненных показателей для контроля здоровья.",
-    icon: "link",
-    badge: "Связь",
+    title: "Рейтинг организаторов",
+    description: "5 звёзд на вечеринках или 4 звезды в туризме — сразу видно, насколько крутой организатор. Безопасно и прозрачно.",
+    icon: "star",
+    badge: "Доверие",
   },
   {
-    title: "Поддержка XR",
-    description: "Нативная совместимость с AR/VR-средами для терапевтических и рабочих приложений.",
-    icon: "target",
-    badge: "XR Ready",
+    title: "Идеально при переезде",
+    description: "Переехал в новый город? Найди компанию за пару минут. Больше не нужно чувствовать себя чужим.",
+    icon: "globe",
+    badge: "Адаптация",
+  },
+  {
+    title: "Для интровертов",
+    description: "Не умеешь знакомиться первым? Просто выбери событие по интересу — общий контекст сделает всё сам.",
+    icon: "heart",
+    badge: "Комфортно",
   },
 ]
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 px-6 bg-background">
+    <section id="features" className="py-24 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Возможности нового поколения</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Всё для живого общения</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Почувствуйте будущее с технологиями, которые переопределяют возможное
+            MeetUp объединяет людей через реальные события — никакой скуки, только живые эмоции
           </p>
         </div>
 
@@ -61,12 +61,12 @@ export function FeaturesSection() {
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-3xl">
-                    {feature.icon === "brain" && "&#129504;"}
-                    {feature.icon === "lock" && "&#128274;"}
-                    {feature.icon === "globe" && "&#127760;"}
-                    {feature.icon === "zap" && "&#9889;"}
-                    {feature.icon === "link" && "&#128279;"}
-                    {feature.icon === "target" && "&#127919;"}
+                    {feature.icon === "person" && "🙋"}
+                    {feature.icon === "map" && "📍"}
+                    {feature.icon === "zap" && "⚡"}
+                    {feature.icon === "star" && "⭐"}
+                    {feature.icon === "globe" && "🌆"}
+                    {feature.icon === "heart" && "💙"}
                   </span>
                   <Badge variant="secondary" className="bg-accent text-accent-foreground">
                     {feature.badge}
