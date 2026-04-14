@@ -88,7 +88,7 @@ export function ApplicationsTimeline() {
       content: (
         <div>
           <p className="text-white text-sm md:text-base font-normal mb-6 leading-relaxed">
-            MeetUp работает в 16 крупнейших городах России. Переехал — открой приложение и уже через
+            Интровертикс работает в 16 крупнейших городах России. Переехал — открой приложение и уже через
             несколько минут найди первое событие рядом.
           </p>
           <div className="grid grid-cols-2 gap-2 mt-4">

@@ -114,7 +114,7 @@ const Scene = () => {
 }
 
 export const Hero3DWebGL = () => {
-  const titleWords = "Meet Up".split(" ")
+  const titleWords = "Интро вертикс".split(" ")
   const subtitle = "Найди компанию. Создай событие. Не скучай в одиночку."
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)

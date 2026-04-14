@@ -1,19 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const testimonials = [
   {
     name: "Алина, 26 лет",
     role: "Переехала из Казани в Москву",
-    avatar: "/professional-woman-scientist.png",
     rating: "⭐⭐⭐⭐⭐",
     content:
-      "Первый месяц в Москве был ужасным — никого не знала. Скачала MeetUp, нашла пробежку в парке и познакомилась с пятью людьми за один вечер. Теперь мы бегаем каждые выходные!",
+      "Первый месяц в Москве был ужасным — никого не знала. Скачала Интровертикс, нашла пробежку в парке и познакомилась с пятью людьми за один вечер. Теперь мы бегаем каждые выходные!",
   },
   {
     name: "Дмитрий, 31 год",
     role: "Интроверт, Екатеринбург",
-    avatar: "/cybersecurity-expert-man.jpg",
     rating: "⭐⭐⭐⭐⭐",
     content:
       "Я всегда боялся знакомиться первым. Но когда идёшь на конкретное мероприятие — не нужно придумывать тему для разговора. Общий интерес уже есть. Нашёл отличных друзей на туристическом походе.",
@@ -21,10 +18,9 @@ const testimonials = [
   {
     name: "Катя, 23 года",
     role: "Организатор вечеринок, Краснодар",
-    avatar: "/asian-woman-tech-developer.jpg",
     rating: "⭐⭐⭐⭐⭐",
     content:
-      "У меня 4.9 звезды на вечеринках! Люди видят рейтинг и сразу решаются прийти. Провела уже 12 событий через MeetUp — каждый раз новые лица и классная атмосфера.",
+      "У меня 4.9 звезды на вечеринках! Люди видят рейтинг и сразу решаются прийти. Провела уже 12 событий через Интровертикс — каждый раз новые лица и классная атмосфера.",
   },
 ]
 
@@ -45,19 +41,9 @@ export function TestimonialsSection() {
               <CardContent className="p-6">
                 <p className="text-lg mb-2">{testimonial.rating}</p>
                 <p className="text-card-foreground mb-6 leading-relaxed italic">"{testimonial.content}"</p>
-                <div className="flex items-center gap-4">
-                  <Avatar>
-                    <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
-                    <AvatarFallback>
-                      {testimonial.name
-                        .split(" ")[0]
-                        .slice(0, 2)}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-semibold text-primary">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
+                <div>
+                  <p className="font-semibold text-primary">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
               </CardContent>
             </Card>

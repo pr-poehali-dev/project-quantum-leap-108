@@ -47,7 +47,7 @@ export function FeaturesSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4 font-sans">Всё для живого общения</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            MeetUp объединяет людей через реальные события — никакой скуки, только живые эмоции
+            Интровертикс объединяет людей через реальные события — никакой скуки, только живые эмоции
           </p>
         </div>
 
