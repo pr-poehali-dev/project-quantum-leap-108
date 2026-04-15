@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,83 +6,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 340 30% 98%;
+    --foreground: 340 30% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 340 25% 96%;
+    --card-foreground: 340 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 340 30% 12%;
 
-    --primary: 0 84% 60%;
+    --primary: 340 75% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 340 20% 92%;
+    --secondary-foreground: 340 30% 20%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 340 15% 94%;
+    --muted-foreground: 340 10% 45%;
 
-    --accent: 0 84% 60%;
+    --accent: 340 60% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 100%;
-    --ring: 0 84% 60%;
+    --border: 340 20% 90%;
+    --input: 340 15% 94%;
+    --ring: 340 75% 55%;
 
-    --radius: 0.625rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 0 84% 60%;
+    --sidebar-background: 340 25% 97%;
+    --sidebar-foreground: 340 30% 20%;
+    --sidebar-primary: 340 75% 55%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 84% 60%;
+    --sidebar-accent: 340 60% 60%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 0 84% 60%;
-  }
-
-  .dark {
-    --background: 0 0% 3%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 84% 60%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 10%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 0 84% 60%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 15%;
-    --input: 0 0% 10%;
-    --ring: 0 84% 60%;
-
-    --sidebar-background: 0 0% 5%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 0 84% 60%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 0 84% 60%;
+    --sidebar-border: 340 20% 90%;
+    --sidebar-ring: 340 75% 55%;
   }
 }
 
@@ -102,19 +63,19 @@
 
 @layer components {
   .font-orbitron {
-    font-family: 'Play', sans-serif;
+    font-family: "Play", sans-serif;
   }
 
   .font-geist {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
   }
 
   .font-space-mono {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: "JetBrains Mono", monospace;
   }
 
   .font-display {
-    font-family: 'Play', sans-serif;
+    font-family: "Play", sans-serif;
   }
 
   .fade-in {
@@ -135,13 +96,78 @@
 
   .glow-border {
     position: relative;
-    border: 1px solid transparent;
-    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
-      linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent))) border-box;
+    border: 1px solid hsl(340 20% 88%);
+    background: hsl(var(--card));
+    box-shadow: 0 2px 20px hsl(340 60% 90% / 0.3);
+    transition:
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .glow-border:hover {
+    border-color: hsl(340 60% 80%);
+    box-shadow: 0 4px 30px hsl(340 60% 85% / 0.5);
   }
 
   .pulse-button {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .blob-decoration {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    pointer-events: none;
+    animation: blobFloat 8s ease-in-out infinite;
+  }
+
+  .blob-1 {
+    width: 400px;
+    height: 400px;
+    background: hsl(340 80% 70%);
+    top: -100px;
+    right: -100px;
+  }
+
+  .blob-2 {
+    width: 300px;
+    height: 300px;
+    background: hsl(320 70% 75%);
+    bottom: -50px;
+    left: -80px;
+    animation-delay: -4s;
+  }
+
+  .blob-3 {
+    width: 250px;
+    height: 250px;
+    background: hsl(350 60% 80%);
+    top: 50%;
+    left: 50%;
+    animation-delay: -2s;
+  }
+
+  .wave-divider {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wave-divider::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23faf5f7' d='M0,30 C360,60 720,0 1080,30 C1260,45 1350,20 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E")
+      no-repeat center bottom;
+    background-size: cover;
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(hsl(340 40% 85%) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }
 
@@ -196,6 +222,19 @@
   }
   50% {
     opacity: 0.8;
+  }
+}
+
+@keyframes blobFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-15px, 10px) scale(0.95);
   }
 }
 
